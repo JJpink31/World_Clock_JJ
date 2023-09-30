@@ -4,7 +4,7 @@ body{
 .container{
     display: block;
     background: #ffe79af3;;
-    max-width: 450px;
+    max-width: 500px;
     margin:60px auto;
     padding:30px;
     border:5px solid rgb(255, 246, 162);
@@ -16,6 +16,7 @@ h1{
     color:#ff7037;
     font-size: 48px;
 }
+
  footer{
     text-align: center;
     color:white;
@@ -43,6 +44,11 @@ h2{
     font-size: 30px;
     margin:0;
 }
+h2 small {
+    font-size: 25px;
+    color:#ff7e4a;
+}
+
  .time{
     font-size: 38px;
     font-weight: bold;
