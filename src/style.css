@@ -35,6 +35,10 @@ h1{
     text-align: center;
     color:white;
  }
+ .nightTime footer{
+    color: rgba(255, 255, 255, 0.7);
+ }
+
  select{
     display: block;
     background: #feffdf;
@@ -96,5 +100,8 @@ h2{
 }
  a{
     color: #ff9452;
-
+ }
+ 
+ .indexLink{
+    line-height:4;
  }

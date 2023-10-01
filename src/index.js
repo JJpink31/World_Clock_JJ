@@ -39,44 +39,42 @@ setInterval(updateTime,1000);
 
 
 
-function updateCity(event){
-  let cityTimezone=event.target.value;
-  if (cityTimezone === "current"){
+function updateCity(event) {
+  let cityTimezone = event.target.value;
+  if (cityTimezone === "current") {
     cityTimezone = moment.tz.guess();
   }
 
-  let cityName=cityTimezone.replace("_",).split("/")[1];
-  let citytime=moment().tz(cityTimezone);
-  let cityElement=document.querySelector("#cities");
-  cityElement.innerHTML= `
+  let cityName = cityTimezone.replace("_").split("/")[1];
+  let citytime = moment().tz(cityTimezone);
+  let cityElement = document.querySelector("#cities");
+  cityElement.innerHTML = `
      <div class="city"><div>
        <h2>${cityName}</h2>
             <div class="date">${citytime.format("MMMM Do,  YYYY")}</div>
           </div>
           <div>
-            <div class="time">${citytime.format("h:mm:ss")}<small>${citytime.format(" A ")}</small></div>
+            <div class="time">${citytime.format(
+              "h:mm:ss"
+            )}<small>${citytime.format(" A ")}</small></div>
           </div>
         </div>
-        <a href="index.html">Back to Homepage</a>
-        `
-        ;
+        <a href="index.html" class="indexLink">Back to Homepage</a>
+        `;
+
+  nightTime(citytime);
 }
 
-let citySelect=document.querySelector("#city");
-citySelect.addEventListener("change",updateCity);
+let citySelect = document.querySelector("#city");
+citySelect.addEventListener("change", updateCity);
 
-
-function nightTime(event) {
+function nightTime(citytime) {
   let body = document.querySelector("body");
-  let cityTimezone = event.target.value;
+  let currentHours = citytime._d.getHours();
 
-  if (cityTimezone >= 6) {
+  if (currentHours >= 13) {
     body.classList.add("nightTime");
   } else {
     body.classList.remove("nightTime");
   }
 }
-
-let nightMode = document.querySelector("#city");
-nightMode.addEventListener("change", nightTime);
-
