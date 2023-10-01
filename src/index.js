@@ -30,8 +30,30 @@ let dublinTimeElement=dublinElement.querySelector(".time");
 let dublinTime=moment().tz("Europe/Dublin");
   dublinDateElement.innerHTML=moment().format("MMMM Do,  YYYY");
   dublinTimeElement.innerHTML=dublinTime.format("h:mm:ss [<small>]A[</small>]");
+
 }
 
 
 updateTime();
 setInterval(updateTime,1000);
+
+
+
+function updateCity(event){
+  let cityTimezone=event.target.value;
+  let cityName=cityTimezone.replace("_",).split("/")[1];
+  let citytime=moment().tz(cityTimezone);
+  let cityElement=document.querySelector("#cities");
+  cityElement.innerHTML= `
+     <div class="city"><div>
+       <h2>${cityName}</h2>
+            <div class="date">${citytime.format("MMMM Do,  YYYY")}</div>
+          </div>
+          <div>
+            <div class="time">${citytime.format("h:mm:ss")}<small>${citytime.format(" A ")}</small></div>
+          </div>
+        </div>`;
+}
+
+let citySelect=document.querySelector("#city");
+citySelect.addEventListener("change",updateCity);
