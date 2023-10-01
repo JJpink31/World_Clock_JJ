@@ -1,9 +1,12 @@
 body{
     background: #ffa952;
 }
+.nightTime{
+    background: rgb(0, 0, 23);
+}
 .container{
     display: block;
-    background: #ffe79af3;;
+    background: #ffe79af3;
     max-width: 500px;
     margin:60px auto;
     padding:30px;
@@ -11,10 +14,21 @@ body{
     border-radius:50px;
 }
 
+.nightTime .container{
+    border: 4px solid rgba(35, 35, 64, 0.593);
+    background: rgba(11, 11, 62, 0.809);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
+}
+
 h1{
     text-align: center;
     color:#ff7037;
     font-size: 48px;
+}
+
+ .nightTime h1{
+    color:rgb(222, 240, 255);
 }
 
  footer{
@@ -27,11 +41,18 @@ h1{
     color:#ffa952;
     width:100%;
     padding: 12px;
-    border: 3px solid #fff08e ;
+    border: 3px solid #fff08e;
     border-radius: 50px;
     font-size: 18px;
-
  }
+.nightTime select{
+    background:rgb(0, 0, 23);
+    color:rgb(210, 218, 224);
+    border:3px solid rgba(157, 161, 164, 0.655);
+}
+.nightTime .city{
+    border-bottom:3px dashed rgba(206, 234, 247, 0.3) ;
+}
  .city{
     display:flex;
     justify-content: space-between;
@@ -39,24 +60,41 @@ h1{
     margin:35px 0;
     border-bottom: 4px dashed rgba(255, 247, 203, 0.938);
  }
- 
+ .nightTime h2{
+    color: rgb(210, 218, 224);
+}
 h2{
     font-size: 30px;
     margin:0;
 }
+.nightTime .time{
+    color: rgb(210, 218, 224);
+    }
 
  .time{
     font-size: 38px;
     font-weight: bold;
  }
+ .nightTime .time small{
+    color: rgb(210, 218, 224);   
+ }
+
 .time small{
     font-size: 15px;
     vertical-align: middle;
+}
+.nightTime .date{
+    color: rgba(127, 161, 186, 0.773);
+    
 }
 .date{
     color:#ff945295;
     margin-bottom: 14px;
 }
+.nightTime a{
+    color:rgba(145, 199, 237, 0.836) ;
+}
  a{
     color: #ff9452;
+
  }
