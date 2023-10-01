@@ -66,14 +66,17 @@ let citySelect=document.querySelector("#city");
 citySelect.addEventListener("change",updateCity);
 
 
-function nightTime(event){
-  let body=document.querySelector("body");
-    if ("cityTimezone" >= 6){
-      body.classList.add("nightTime");  
-        } else {
-          body.classList.remove("nightTime");
-        }
-      }
-  let nightMode=document.querySelector("#city");
-  nightMode.addEventListener("change", nightTime);
+function nightTime(event) {
+  let body = document.querySelector("body");
+  let cityTimezone = event.target.value;
+
+  if (cityTimezone >= 6) {
+    body.classList.add("nightTime");
+  } else {
+    body.classList.remove("nightTime");
+  }
+}
+
+let nightMode = document.querySelector("#city");
+nightMode.addEventListener("change", nightTime);
 
